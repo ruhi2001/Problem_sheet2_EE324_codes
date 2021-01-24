@@ -6,17 +6,12 @@ y1 = csim("step",t,sys)
 plot2d(t,y1)
 
 //partb
-z = poly(0,"z");
-G1 = 1/z;
-sys1 = syslin("d",G1)
-sl = tf2ss(sys1);
-t=0:1:20;
-u = ones(1,20);
-y2 = dsimul(sl,u);
-plot(t,y2);
-
-xlabel("t");
-ylabel("y2");
+z=poly(0,'z')
+h=syslin("d",(1/z))
+sl=tf2ss(h)
+u=ones(1,20)
+x2=dsimul(sl,u)  //Step response
+disp(x2)
 
 //q4 partc
 s =poly(0,"s")
